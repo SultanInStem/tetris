@@ -13,9 +13,10 @@ class Canvas:
         self.fps = 60 
     def update(self): 
         pass 
-
     def handle_events(self): 
-        pass 
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT: 
+                self.running = False 
     def render(self): 
         pass 
     def run(self): 
