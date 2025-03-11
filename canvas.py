@@ -1,12 +1,11 @@
 import pygame
-from config import SCREEN_SIZE
 import sys 
-
+from config import SCREEN_SIZE
 class Canvas: 
     def __init__(self): 
         pygame.init()
         self.screen = pygame.display.set_mode(SCREEN_SIZE)
-        pygame.display.set_mode("tetris")
+        pygame.display.set_caption("Tetris")
 
         self.running = True 
         self.clock = pygame.time.Clock()
@@ -28,7 +27,7 @@ class Canvas:
     def render(self): 
         self.screen.fill((0,0,0))
 
-
+        self.draw_text("Hello world", self.font, (255,0,0), (600,400))
 
         pygame.display.flip()
         self.clock.tick(self.fps)
