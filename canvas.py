@@ -10,7 +10,15 @@ class Canvas:
 
         self.running = True 
         self.clock = pygame.time.Clock()
-        self.fps = 60 
+        self.fps = 20 
+        self.font = pygame.font.SysFont("Arial", 30)
+
+    def draw_text(self, text, font, text_color, pos): 
+        img = font.render(text, True, text_color)
+        self.screen.blit(img, pos)
+
+
+
     def update(self): 
         pass 
     def handle_events(self): 
@@ -18,7 +26,12 @@ class Canvas:
             if event.type == pygame.QUIT: 
                 self.running = False 
     def render(self): 
-        pass 
+        self.screen.fill((0,0,0))
+
+
+
+        pygame.display.flip()
+        self.clock.tick(self.fps)
     def run(self): 
         while(self.running): 
             self.handle_events()
