@@ -24,6 +24,18 @@ class Canvas:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: 
                 self.running = False 
+            if event.type == pygame.KEYDOWN:
+                keys = pygame.key.get_pressed()
+                if keys[pygame.K_UP]: 
+                    ## rotate tetramino 
+                    pass 
+                elif keys[pygame.K_LEFT]: 
+                    ## move tetramino to the left 
+                    pass 
+                elif keys[pygame.K_RIGHT]:
+                    ## move tetramino to the right  
+                    pass 
+                 
     def render(self): 
         self.screen.fill((0,0,0))
 
