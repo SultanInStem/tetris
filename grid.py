@@ -12,11 +12,20 @@ class Grid:
             (self.pos[0],self.pos[1],GRID_SIZE[0],GRID_SIZE[1]),
             1
         )
-        for x in range(0, GRID_SIZE[0] // self.block_size):
+
+        for x in range(0, GRID_SIZE[0] // self.block_size): 
             pygame.draw.line(
                 screen, 
                 (255,0,0), 
-                (self.pos[0] + 30 * x, 0),
-                (self.pos[0] + 30 * x, SCREEN_SIZE[1]),
+                (self.pos[0] + self.block_size * x, 0), 
+                (self.pos[0] + self.block_size * x, GRID_SIZE[1]), 
                 1
-            ) 
+            )
+        for y in range (0, GRID_SIZE[1] // self.block_size): 
+            pygame.draw.line(
+                screen, 
+                (0,255,0), 
+                (self.pos[0], self.pos[1] + self.block_size * y),
+                (self.pos[0] + GRID_SIZE[0], self.pos[1] + self.block_size * y),
+                1
+            )
