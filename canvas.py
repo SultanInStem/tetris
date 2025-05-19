@@ -2,6 +2,7 @@ import pygame
 import sys 
 from config import SCREEN_SIZE
 from grid import Grid
+from shape import Shape
 class Canvas: 
     def __init__(self): 
         pygame.init()
@@ -12,9 +13,15 @@ class Canvas:
         self.clock = pygame.time.Clock()
         self.fps = 20 
         self.font = pygame.font.SysFont("Arial", 30)
-        
-
         self.grid = Grid()
+        self.frozen_shapes = []
+        self.shape_templates = [
+
+        ] 
+        # shapes will be chosen and copied from shape_templates, then their position 
+        # will be adjusted slightly to create a sense of randomness
+
+
 
     def draw_text(self, text, font, text_color, pos): 
         img = font.render(text, True, text_color)
