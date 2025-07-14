@@ -14,12 +14,8 @@ class Canvas:
         self.fps = 20 
         self.font = pygame.font.SysFont("Arial", 30)
         self.grid = Grid()
-        self.frozen_shapes = []
-        self.shape_templates = [
+ 
 
-        ] 
-        # shapes will be chosen and copied from shape_templates, then their position 
-        # will be adjusted slightly to create a sense of randomness
 
 
 
@@ -50,7 +46,6 @@ class Canvas:
     def render(self): 
         self.screen.fill((0,0,0))
 
-        # self.draw_text("Hello world", self.font, (255,0,0), (600,400))
         self.grid.draw(self.screen)
 
         
