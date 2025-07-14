@@ -16,9 +16,6 @@ class Canvas:
         self.grid = Grid()
  
 
-
-
-
     def draw_text(self, text, font, text_color, pos): 
         img = font.render(text, True, text_color)
         self.screen.blit(img, pos)
